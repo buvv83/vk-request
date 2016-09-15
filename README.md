@@ -1,11 +1,6 @@
-##Start
-```sh
-npm install vk-api-help
-```
-
 ##Get started
 ```js
-var VK = require('vk-api-help');
+var VK = require('vk-request');
 
 //Request to any VK api method 
 var vkRequest = new VK.VkRequest('USER_TOKEN');
@@ -14,7 +9,7 @@ vkRequest.method('audio.get', { owner_id: 1, count: 2, offset: 1 })
     console.log(json);
 })
 .catch({ name: 'VkApiError' }, function(error) {
-    console.log(`VKApi error ${error.error_code} ${error.error_msg}`);
+    console.log('VKApi error '+ error.error_code + ' ' +  error.error_msg);
     switch(error.error_code) {
         case 14:
             console.log('Captcha error');
@@ -27,7 +22,7 @@ vkRequest.method('audio.get', { owner_id: 1, count: 2, offset: 1 })
     }
 })
 .catch(function(error) {
-    console.log(`Other error ${error.error_msg}`);
+    console.log('Other error ' + error.error_msg);
 });
 
 //Reqeust to VK api for get access token by user code 
