@@ -1,6 +1,6 @@
 {
   "name": "vk-request",
-  "version": "1.0",
+  "version": "1.1.1",
   "description": "vk api methods",
   "main": "index.js",
   "scripts": {
